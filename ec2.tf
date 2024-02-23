@@ -2,13 +2,13 @@
 resource "aws_instance" "wordpress" {
   ami                         = "ami-0440d3b780d96b29d"
   instance_type               = "t2.micro"
-  key_name                    = "wordpress1"
+  key_name                    = "shiva"
   vpc_security_group_ids      = [aws_security_group.ec2-SG.id]
   subnet_id                   = aws_subnet.subnet-1.id
   associate_public_ip_address = true
-  user_data                   = file("userdata.sh")
+  user_data                   = file("data.sh")
 
   tags = {
-    Name = "Wordpress"
+    Name = "terraform"
   }
 }
