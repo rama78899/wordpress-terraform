@@ -6,7 +6,7 @@ resource "aws_instance" "wordpress" {
   vpc_security_group_ids      = [aws_security_group.ec2-SG.id]
   subnet_id                   = aws_subnet.subnet-1.id
   associate_public_ip_address = true
-  user_data                   = file("data.sh")
+  user_data                   = file("userdata.sh")
 
   tags = {
     Name = "terraform"
